@@ -1,6 +1,6 @@
 #!/bin/bash
 deno fmt {,**/}*.{j,t}s
 #deno lint --unstable {,**/}*.{j,t}s
-deno test --unstable --allow-env --allow-read --allow-run {,**/}*test.js "$@"
+deno test --unstable --allow-env --allow-read --allow-run {**/}*test.js "$@"
 # --coverage=_cov
 # deno coverage --unstable _cov

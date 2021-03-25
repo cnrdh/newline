@@ -12,7 +12,7 @@ const output = (d) => {};
 test("ndmapcommand", async () => {
   const chunks = [];
   const generator = jsongenerator(
-    `\r\n{"a": "a"}\r\n{"b": "b"}\r\n{"æøå": "ÆØÅ"}`
+    `\r\n{"a": "a"}\r\n{"b": "b"}\r\n{"æøå": "ÆØÅ"}`,
   );
 
   const mapfx = (d) => {
