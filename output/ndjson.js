@@ -1,7 +1,7 @@
 const { entries, fromEntries, keys, values } = Object;
 const { stringify } = JSON;
 
-export const outputFactory = ({ format } = {}) => {
+export const outputFactory = ({ format, args } = {}) => {
   return ndjson;
 };
 

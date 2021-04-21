@@ -34,11 +34,11 @@ export const sortjson = ({ locales, reverse = false } = {}) =>
 export const sorton = ({
   on,
   locales,
-  numerical = false,
+  numeric = false,
   reverse = false,
 } = {}) =>
   (a, b) =>
-    numerical === true
+    numeric === true
       ? _direction(reverse) * (a[on] - b[on])
       : _direction(reverse) * compareFactory(locales)(a[on], b[on]);
 
