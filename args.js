@@ -1,13 +1,14 @@
 import { parseArgs } from "./deps.js";
 
 export const commonOptions = {
-  boolean: ["help", "std", "debug", "numerical", "text", "ignore-empty"],
+  boolean: ["help", "std", "debug", "numeric", "text", "ignore-empty"],
   alias: {
     h: "help",
     v: "values",
+    s: "std",
     t: "text",
     f: "format",
-    n: "numerical",
+    n: "numeric",
   },
   default: {
     format: "ndjson",

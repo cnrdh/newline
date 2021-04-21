@@ -4,9 +4,7 @@ import { jsongenerator } from "../generator/json-gen.js";
 const { stdin } = Deno;
 import { debugOutput as dbg, ndjson } from "../output/ndjson.js";
 
-// Apply `mapfx` to stream of objects
-// Input is derived from STDIN via async `generator`
-// Write result to stdout
+// Apply `mapfx` to stream of objects from STDIN via async `generator` and write result+newline to STDOUT
 export const ndmapcommand = async ({
   mapfx,
   generator = jsongenerator(stdin), // NDJSON from STDIN
@@ -47,7 +45,7 @@ export const ndmapcommand = async ({
     }
     return position;
   } catch (e) {
-    console.error("nd-map failed at line", { position });
+    console.error(`${Deno.mainModule} failed at line: ${position} `);
     throw e;
   }
 };

@@ -1,21 +1,22 @@
 import { parseArgs } from "./deps.js";
+import { commonOptions } from "./args.js";
 import { ndjson } from "./output/ndjson.js";
 import { csvgenerator } from "./nd-csv/csv-gen.js";
 const { stdin, exit } = Deno;
 
 import { helptext } from "./nd-csv/helptext.js";
-import { ndcsv } from "./nd-csv/command.js";
-export const defaultArgs = {
-  boolean: ["help", "std", "debug"],
-  alias: { h: "help", v: "values", n: "num", s: "std" },
-  default: {
-    "keys-fx": "default",
-    values: false,
-  },
-};
+import { ndcsvcommand } from "./nd-csv/command.js";
+
 if (import.meta.main) {
   try {
-    const args = parseArgs(Deno.args, defaultArgs);
+    const options = { ...commonOptions };
+    options.default = {
+      ...options.default,
+      "keys-fx": "default",
+      values: false,
+    };
+    const args = parseArgs(Deno.args, options);
+
     const { separator, select, std, values, help } = args;
 
     if (help) {
@@ -33,14 +34,14 @@ if (import.meta.main) {
       : undefined;
 
     const generator = csvgenerator(stdin, {
+      ...args,
       separator,
       columns,
       values,
       columnTransformer,
-      ...args,
     });
 
-    await ndcsv({ generator, args });
+    await ndcsvcommand({ generator, args });
   } catch (e) {
     console.error(e);
     exit(1);

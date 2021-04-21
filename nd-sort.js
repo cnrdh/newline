@@ -15,7 +15,7 @@ if (import.meta.main) {
   const {
     on,
     help,
-    numerical,
+    numeric,
     reverse,
     locales,
     _: [sortfxbody],
@@ -28,7 +28,7 @@ if (import.meta.main) {
     exit(0);
   }
   const sortfx = on && on.length > 0
-    ? sorton({ on, reverse, numerical, locales })
+    ? sorton({ on, reverse, numeric, locales })
     : createSortFunction({ sortfxbody, locales, reverse });
 
   const generator = generatorFactory({ args, reader: stdin });

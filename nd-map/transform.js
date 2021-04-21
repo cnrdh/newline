@@ -1,4 +1,7 @@
-const { create } = Object;
+const { create, keys } = Object;
+
+const isNumber = (n) =>
+  !["", undefined, null, true, false].includes(n) && !Number.isNaN(Number(n));
 
 const defaultSelectfx = (object, position, args) => {
   const keys = args.select.split(",");
@@ -14,13 +17,23 @@ export async function* transform({
   position = 0,
   args,
 }) {
-  const { select } = args;
+  const { select, numeric } = args;
 
   for await (let object of generator) {
     // --select field1,field2
     if (select && select.length > 0) {
       object = selectfx(object, position, args);
     }
+    // --numeric
+    if (numeric) {
+      keys(object).map((k) => {
+        const n = object[k];
+        if (isNumber(n)) {
+          object[k] = Number(n);
+        }
+      });
+    }
+
     yield await mapfx(object, position, args);
     position++;
   }
