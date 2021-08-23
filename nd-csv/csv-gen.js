@@ -1,21 +1,20 @@
-import { parseCSV, readLines } from "../deps.js";
+import { readLines } from "../deps.js";
 import {
   arrayFromCSVLine,
   detectSeparator,
-  normalizeKey,
+  //normalizeKey,
   objectFromCSVLine,
 } from "../nd-csv/csv-helpers.js";
 
 import { isEmptyOrComment } from "../generator/common-helpers.js";
 
-const { keys } = Object;
 // create map column name => to actual position in CSV (array index)
 const columnNamePositionMap = ({ columns, actualColumns }) =>
   new Map(
     columns.map((usercol) => [
       usercol,
       actualColumns.findIndex((act) => act === usercol),
-    ]),
+    ])
   );
 
 export async function* csvgenerator(
@@ -29,7 +28,7 @@ export async function* csvgenerator(
     debug,
     objectifier = objectFromCSVLine,
     ...args
-  } = {},
+  } = {}
 ) {
   let position = 0;
   let columnMap;
