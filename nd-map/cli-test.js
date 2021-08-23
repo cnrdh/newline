@@ -43,7 +43,7 @@ test(`nd-map --text [cli] should return newline separated JSON strings, ie. "tex
   assertEquals(await p.status(), { code: 0, success: true });
   assertEquals(
     new TextDecoder().decode(await p.output()),
-    '"nd-map --text"\n"yay"\n"123"\n'
+    '"nd-map --text"\n"yay"\n"123"\n',
   );
 
   p.close();
@@ -51,7 +51,7 @@ test(`nd-map --text [cli] should return newline separated JSON strings, ie. "tex
 
 test("nd-map [cli] should exit with success status 0", async () => {
   const p = runNdMap(
-    "epochYear = new Date(d.epoch).getFullYear(), { epochYear }"
+    "epochYear = new Date(d.epoch).getFullYear(), { epochYear }",
   );
   assert(p.stdin !== null);
   await p.stdin.write(encode(`{ "epoch": 0 }`));
