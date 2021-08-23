@@ -1,6 +1,5 @@
 import { parseArgs } from "./deps.js";
 import { commonOptions } from "./args.js";
-import { ndjson } from "./output/ndjson.js";
 import { csvgenerator } from "./nd-csv/csv-gen.js";
 const { stdin, exit } = Deno;
 

@@ -5,7 +5,7 @@ import { uuidv5URL } from "./v5-url.js";
 export const NAMESPACE = "20d0c0d4-d220-42e7-8629-adf2751146b2"; // Just a random UUID;
 
 const v5 = (string, namespace = NAMESPACE) =>
-  uuidv5(NAMESPACE, new TextEncoder().encode(string));
+  uuidv5(namespace, new TextEncoder().encode(string));
 
 export const uuidForObject = async (
   object,

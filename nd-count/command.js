@@ -10,7 +10,7 @@ export const ndcountcommand = async ({ generator, mapfx, args }) => {
   const countMap = await count({ generator: transformGenerator });
   const key = args.key ?? "count";
   const array = [...countMap]
-    .filter(([group, count]) => (args.d ? count > 1 : true))
+    .filter(([, count]) => (args.d ? count > 1 : true))
     .map(([group, count]) => ({
       ...JSON.parse(group),
       [key]: count,

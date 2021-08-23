@@ -14,7 +14,7 @@ const columnNamePositionMap = ({ columns, actualColumns }) =>
     columns.map((usercol) => [
       usercol,
       actualColumns.findIndex((act) => act === usercol),
-    ])
+    ]),
   );
 
 export async function* csvgenerator(
@@ -28,7 +28,7 @@ export async function* csvgenerator(
     debug,
     objectifier = objectFromCSVLine,
     ...args
-  } = {}
+  } = {},
 ) {
   let position = 0;
   let columnMap;

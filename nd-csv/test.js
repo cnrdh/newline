@@ -8,6 +8,7 @@ test("nd-csv transforms CSV to newline-delimited JSON documents", async () => {
     chunks.push(object);
   }
   reader.close();
-  const exp = `{"one":"1","two":"2","three":"3"}\n{"one":"ein","two":"to","three":"tri"}\n{"one":"en","two":"to","three":"tre"}`;
+  const exp =
+    `{"one":"1","two":"2","three":"3"}\n{"one":"ein","two":"to","three":"tri"}\n{"one":"en","two":"to","three":"tre"}`;
   assertEquals(chunks.map(JSON.stringify).join("\n"), exp);
 });

@@ -1,7 +1,7 @@
 import { uuidForObject } from "./uuid-for-object.js";
 
 export const uuidmapfx = async (d, i, args) => {
-  const { v4, v5, name, namespace, key, random } = args;
+  const { v4, name, namespace, key, random } = args;
 
   const uuid = await uuidForObject(d, {
     namefxbody: name,

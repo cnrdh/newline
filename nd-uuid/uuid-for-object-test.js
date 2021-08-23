@@ -1,5 +1,5 @@
 import { NAMESPACE, uuidForObject } from "./uuid-for-object.js";
-import { assertEquals, stringify, test } from "../test-deps.js";
+import { assertEquals, test } from "../test-deps.js";
 
 // $ echo '{"a": "a" }' | nd-uuid
 // {"a":"a","uuid":"c8221c5a-a4a9-5f98-9d69-1089c7ca7c72"}

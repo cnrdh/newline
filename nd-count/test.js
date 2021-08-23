@@ -1,6 +1,6 @@
 import { count } from "./count.js";
 import { jsongenerator } from "../generator/json-gen.js";
-import { assertEquals, readTestdata, test } from "../test-deps.js";
+import { assertEquals, test } from "../test-deps.js";
 
 test("count returns a map counting the number of unique documents", async () => {
   const generator = jsongenerator(
