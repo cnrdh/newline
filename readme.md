@@ -7,3 +7,5 @@ engine via [Deno](https://deno.land/).
 These tools, inspired by [ndjson-cli](https://github.com/mbostock/ndjson-cli),
 allow you to modify, filter, validate, and reduce piped input streams of JSON,
 CSV, or other newline formatted text data.
+
+[![Deno](https://github.com/cnrdh/newline/actions/workflows/deno.yml/badge.svg)](https://github.com/cnrdh/newline/actions/workflows/deno.yml)
