@@ -3,7 +3,7 @@ import { textgenerator } from "../generator/text-gen.js";
 import { jsongenerator } from "../generator/json-gen.js";
 import { assertEquals, test } from "../test-deps.js";
 
-const output = (d) => {};
+const output = () => {}; // no output
 
 // echo -e '\r\n{"a": "a"}\r\n{"b": "b"}\r\n{"æøå": "ÆØÅ"}'  | nd-map
 // {"a":"a"}
@@ -12,7 +12,7 @@ const output = (d) => {};
 test("ndmapcommand", async () => {
   const chunks = [];
   const generator = jsongenerator(
-    `\r\n{"a": "a"}\r\n{"b": "b"}\r\n{"æøå": "ÆØÅ"}`,
+    `\r\n{"a": "a"}\r\n{"b": "b"}\r\n{"æøå": "ÆØÅ"}`
   );
 
   const mapfx = (d) => {

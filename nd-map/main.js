@@ -1,11 +1,9 @@
-import { jsongenerator } from "../generator/json-gen.js";
-import { textgenerator } from "../generator/text-gen.js";
 import { generatorFactory } from "../generator/factory.js";
 
 import { getArgs } from "../args.js";
 import { createAsyncFunction } from "../async-function.js";
 
-import { ndjson, outputFactory } from "../output/ndjson.js";
+import { outputFactory } from "../output/ndjson.js";
 
 const { stdin, exit } = Deno;
 
@@ -19,7 +17,7 @@ export async function main({
 }) {
   const {
     _: [fxbody],
-    imports,
+    //imports,
     format,
     help,
   } = args;
