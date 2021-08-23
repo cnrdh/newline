@@ -19,7 +19,7 @@ export const detectSeparator = (csvtextline) => {
 
 export const objectFromCSVLine = async ({
   line,
-  position,
+  //position,
   separator,
   columns,
   columnMap,

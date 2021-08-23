@@ -1,7 +1,7 @@
 import { commonOptions, getArgs as _getArgs } from "../args.js";
 
-const VALUE_KEY = 0;
-const COUNT_KEY = 1;
+export const VALUE_KEY = 0;
+export const COUNT_KEY = 1;
 
 export const facetOptions = {
   ...commonOptions,

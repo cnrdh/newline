@@ -8,7 +8,7 @@ export async function* textgenerator(text, args = {}) {
   let i = 0;
   for await (const line of readLines(reader)) {
     const ign = ignore(line, i++, args);
-    if (args.blanks === true || ignore(line) !== true) {
+    if (args.blanks === true || ign !== true) {
       yield line;
     }
   }

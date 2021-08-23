@@ -1,5 +1,5 @@
 const { stringify } = JSON;
-const { keys, entries, fromEntries } = Object;
+const { keys } = Object;
 
 export const buildFacetMaps = async ({ generator }) => {
   const map = new Map(); // Map of unique value sets keyed by term
@@ -45,11 +45,11 @@ const sortedFacetEntries = ({ map, count, sorton, sortdir = -1, min, max }) => {
       k,
       values
         .map((v) => [v, count.get(stringify([k, v]))])
-        .filter(([v, c]) => {
+        .filter(([, c]) => {
           return c >= min;
         })
         .sort((a, b) => {
-          return -1 * (a[sorton] - b[sorton]);
+          return sortdir * (a[sorton] - b[sorton]);
         })
         .slice(0, max),
     ]);

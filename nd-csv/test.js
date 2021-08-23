@@ -1,10 +1,5 @@
 import { csvgenerator } from "./csv-gen.js";
-import {
-  assertEquals,
-  readTestdata,
-  test,
-  testdataPath,
-} from "../test-deps.js";
+import { assertEquals, test, testdataPath } from "../test-deps.js";
 
 test("nd-csv transforms CSV to newline-delimited JSON documents", async () => {
   const chunks = [];

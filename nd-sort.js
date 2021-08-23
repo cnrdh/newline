@@ -1,5 +1,5 @@
 import { ndsortcommand } from "./nd-sort/command.js";
-import { createSortFunction, sortjson, sorton } from "./nd-sort/sort.js";
+import { createSortFunction, /*sortjson,*/ sorton } from "./nd-sort/sort.js";
 import { helptext } from "./nd-sort/helptext.js";
 
 import { generatorFactory } from "./generator/factory.js";

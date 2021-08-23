@@ -1,13 +1,13 @@
 const { entries, fromEntries, keys, values } = Object;
 const { stringify } = JSON;
 
-export const outputFactory = ({ format, args } = {}) => {
+export const outputFactory = (/*{ format, args } = {}*/) => {
   return ndjson;
 };
 
 const ndjsonwrite = (o, { pretty = false, removeEmpty = false } = {}) => {
   o = removeEmpty
-    ? fromEntries(entries(o).filter(([k, v]) => ![""].includes(v)))
+    ? fromEntries(entries(o).filter(([, v]) => ![""].includes(v)))
     : o;
   console.log(stringify(o, null, pretty !== true ? undefined : "  "));
 };

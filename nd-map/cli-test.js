@@ -8,7 +8,6 @@ const { test, run, execPath } = Deno;
 
 const deno = execPath();
 
-const output = (d) => {}; // suppress
 const denoRunNDMap = [deno, "run", "nd-map.js"];
 
 const cmdfx = (stmt, args) => [...denoRunNDMap, stmt, ...args];
