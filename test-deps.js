@@ -6,7 +6,9 @@ import {
 
 export {
   assert,
+  assertArrayIncludes,
   assertEquals,
+  assertObjectMatch,
   assertStringIncludes,
 } from "https://deno.land/std@0.105.0/testing/asserts.ts";
 
