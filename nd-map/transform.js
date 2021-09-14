@@ -3,8 +3,9 @@ const { create, keys } = Object;
 const isNumber = (n) =>
   !["", undefined, null, true, false].includes(n) && !Number.isNaN(Number(n));
 
-const defaultSelectfx = (object /*, position, args*/) => {
+const defaultSelectfx = (object, position, args) => {
   const keys = args.select.split(",");
+  const i = position;
   const sel = create(null);
   keys.map((k) => (sel[k] = object[k] ?? null)); // Injecting null keeps key ordering consistent
   return sel;
